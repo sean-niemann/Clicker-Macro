@@ -35,13 +35,14 @@ import java.awt.event.*;
  */
 public class Clicker extends Frame implements ActionListener, KeyEventDispatcher {
 	
-	private static final long serialVersionUID = 3156838326551517310L;
+    private static final long serialVersionUID = 3156838326551517310L;
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         try {
-        	new Clicker().create();
+            new Clicker().create();
         } catch(AWTException e) {
-        	System.err.println("Unable to create robot instance");
+            System.err.println("Unable to create robot instance");
+	    e.printStackTrace();
         }
     }
     
@@ -158,7 +159,7 @@ public class Clicker extends Frame implements ActionListener, KeyEventDispatcher
                         Thread.sleep(delay);
                     }
                 } catch(InterruptedException e) {
-                    // ignore
+                    e.printStackTrace();
                 }
             }
         });
